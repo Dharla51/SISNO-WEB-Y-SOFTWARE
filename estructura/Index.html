@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISNOT - Gestión Inteligente de Presupuestos</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+     <div class="imagen-contenedor">
+        <img src="nave2.jpg"id="imagen">
+     </div>
+    
+    <nav class="glass border-b border-border sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-4">
+                    <h1 id="letrero" class="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                        SISNOT
+                    </h1>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <button class="nav-button flex items-center space-x-2">
+                        <i class="fas fa-home w-4 h-4"></i>
+                        <span>Home</span>
+                    </button>
+
+                    <button class="nav-button flex items-center space-x-2">
+                        <i class="fas fa-users w-4 h-4"></i>
+                        <span>Nosotros</span>
+                    </button>
+
+                    <div class="dropdown">
+                        <button class="nav-button dropdown-trigger flex items-center space-x-2">
+                            <i class="fas fa-chart-bar w-4 h-4"></i>
+                            <span>Gestión</span>
+                            <i class="fas fa-chevron-down w-4 h-4"></i>
+                        </button>
+                        <div class="dropdown-content glass">
+                            <a href="#" class="dropdown-item">Datos</a>
+                            <a href="#" class="dropdown-item">Gastos</a>
+                            <div class="dropdown-separator"></div>
+                            <a href="#" class="dropdown-item">Reportes</a>
+                            <a href="#" class="dropdown-item">Avances</a>
+                        </div>
+                    </div>
+
+                    <button class="nav-button flex items-center space-x-2 opacity-50 cursor-not-allowed" disabled>
+                        <i class="fas fa-user-plus w-4 h-4"></i>
+                        <span>Registrarte</span>
+                    </button>
+                </div>
+
+                <!-- Search -->
+                <div class="hidden md:flex items-center space-x-2">
+                    <div class="relative">
+                        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4"></i>
+                        <input type="text" placeholder="Buscar..." class="search-input pl-10 w-64 glass" />
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button class="nav-button md:hidden mobile-menu-toggle">
+                    <i class="fas fa-bars w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="mobile-menu md:hidden py-4 space-y-2 glass-card rounded-lg mt-2 mb-4 hidden">
+                <button class="nav-button w-full justify-start">
+                    <i class="fas fa-home w-4 h-4 mr-2"></i>
+                    Home
+                </button>
+                <button class="nav-button w-full justify-start">
+                    <i class="fas fa-users w-4 h-4 mr-2"></i>
+                    Nosotros
+                </button>
+                <button class="nav-button w-full justify-start">
+                    <i class="fas fa-chart-bar w-4 h-4 mr-2"></i>
+                    Gestión
+                </button>
+                <button class="nav-button w-full justify-start opacity-50 cursor-not-allowed" disabled>
+                    <i class="fas fa-user-plus w-4 h-4 mr-2"></i>
+                    Registrarte
+                </button>
+                <div class="px-3 pt-2">
+                    <input type="text" placeholder="Buscar..." class="search-input glass w-full" />
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <!-- Header -->
+        <div class="glass-card header-card">
+            <h1 class="main-title" id="letra">SISNOT</h1>
+            <p class="main-subtitle">Gestión Inteligente de Presupuestos con Predicción Avanzada</p>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon food">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>Alimentación</h3>
+                    <p class="stat-amount">$1,250.00</p>
+                    <p class="stat-change positive">+5.2% vs mes anterior</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon transport">
+                    <i class="fas fa-car"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>Transporte</h3>
+                    <p class="stat-amount">$850.00</p>
+                    <p class="stat-change negative">-2.1% vs mes anterior</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon entertainment">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>Entretenimiento</h3>
+                    <p class="stat-amount">$420.00</p>
+                    <p class="stat-change positive">+12.3% vs mes anterior</p>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon health">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>Salud</h3>
+                    <p class="stat-amount">$320.00</p>
+                    <p class="stat-change neutral">Sin cambios</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="content-grid">
+            <!-- Expense Form -->
+            <div class="glass-card">
+                <h2 class="card-title">
+                    <i class="fas fa-plus-circle"></i>
+                    Registrar Nuevo Gasto
+                </h2>
+                <form class="expense-form">
+                    <div class="form-group">
+                        <label for="amount">Monto</label>
+                        <input type="number" id="amount" placeholder="$0.00" step="0.01">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="category">Categoría</label>
+                        <select id="category" >
+                            <option value="" >Seleccionar categoría</option>
+                            <option value="food">Alimentación</option>
+                            <option value="transport">Transporte</option>
+                            <option value="entertainment">Entretenimiento</option>
+                            <option value="health">Salud</option>
+                            <option value="shopping">Compras</option>
+                            <option value="bills">Servicios</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">Descripción</label>
+                        <input type="text" id="description" placeholder="Descripción del gasto">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Fecha</label>
+                        <input type="date" id="date">
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-save"></i>
+                        Guardar Gasto
+                    </button>
+                </form>
+            </div>
+
+            <!-- Recent Expenses -->
+            <div class="glass-card">
+                <h2 class="card-title">
+                    <i class="fas fa-history"></i>
+                    Gastos Recientes
+                </h2>
+                <div class="expenses-list">
+                    <div class="expense-item">
+                        <div class="expense-icon food">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="expense-details">
+                            <h4>Supermercado</h4>
+                            <p>Alimentación • Hoy</p>
+                        </div>
+                        <div class="expense-amount">-$85.50</div>
+                    </div>
+                    
+                    <div class="expense-item">
+                        <div class="expense-icon transport">
+                            <i class="fas fa-gas-pump"></i>
+                        </div>
+                        <div class="expense-details">
+                            <h4>Gasolina</h4>
+                            <p>Transporte • Ayer</p>
+                        </div>
+                        <div class="expense-amount">-$45.00</div>
+                    </div>
+                    
+                    <div class="expense-item">
+                        <div class="expense-icon entertainment">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <div class="expense-details">
+                            <h4>Netflix</h4>
+                            <p>Entretenimiento • 2 días</p>
+                        </div>
+                        <div class="expense-amount">-$12.99</div>
+                    </div>
+                    
+                    <div class="expense-item">
+                        <div class="expense-icon health">
+                            <i class="fas fa-pills"></i>
+                        </div>
+                        <div class="expense-details">
+                            <h4>Farmacia</h4>
+                            <p>Salud • 3 días</p>
+                        </div>
+                        <div class="expense-amount">-$28.75</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Predictions -->
+        <div class="glass-card">
+            <h2 class="card-title">
+                <i class="fas fa-brain"></i>
+                Predicciones Inteligentes
+            </h2>
+            <div class="predictions-grid">
+                <div class="prediction-card">
+                    <div class="prediction-header">
+                        <h3>Próximos 7 días</h3>
+                        <div class="prediction-percentage high">+15%</div>
+                    </div>
+                    <p class="prediction-amount">$420.00</p>
+                    <p class="prediction-insight">Probable aumento en gastos de alimentación</p>
+                    <div class="prediction-actions">
+                        <button class="btn-secondary">Ver detalles</button>
+                    </div>
+                </div>
+                
+                <div class="prediction-card">
+                    <div class="prediction-header">
+                        <h3>Próximos 30 días</h3>
+                        <div class="prediction-percentage medium">+8%</div>
+                    </div>
+                    <p class="prediction-amount">$1,680.00</p>
+                    <p class="prediction-insight">Gastos estables con ligero incremento</p>
+                    <div class="prediction-actions">
+                        <button class="btn-secondary">Ver detalles</button>
+                    </div>
+                </div>
+                
+                <div class="prediction-card">
+                    <div class="prediction-header">
+                        <h3>Fin de año</h3>
+                        <div class="prediction-percentage low">+3%</div>
+                    </div>
+                    <p class="prediction-amount">$18,500.00</p>
+                    <p class="prediction-insight">Proyección anual dentro del presupuesto</p>
+                    <div class="prediction-actions">
+                        <button class="btn-secondary">Ver detalles</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scenario Simulator -->
+        <div class="glass-card">
+            <h2 class="card-title">
+                <i class="fas fa-calculator"></i>
+                Simulador de Escenarios
+            </h2>
+            <div class="simulator-content">
+                <div class="simulator-controls">
+                    <div class="control-group">
+                        <label>Reducir gastos de alimentación</label>
+                        <input type="range" min="0" max="50" value="20" class="slider">
+                        <span class="slider-value">20%</span>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label>Aumentar presupuesto de entretenimiento</label>
+                        <input type="range" min="0" max="100" value="15" class="slider">
+                        <span class="slider-value">15%</span>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label>Meta de ahorro mensual</label>
+                        <input type="range" min="0" max="1000" value="300" class="slider">
+                        <span class="slider-value">$300</span>
+                    </div>
+                </div>
+                
+                <div class="simulator-results">
+                    <h3>Resultado de la simulación</h3>
+                    <div class="result-item">
+                        <span>Ahorro proyectado:</span>
+                        <span class="result-value positive">+$450/mes</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Impacto en presupuesto:</span>
+                        <span class="result-value neutral">Equilibrado</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Recomendación:</span>
+                        <span class="result-value">Factible</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Savings Goals -->
+        <div class="glass-card">
+            <h2 class="card-title">
+                <i class="fas fa-target"></i>
+                Metas de Ahorro
+            </h2>
+            <div class="goals-grid">
+                <div class="goal-card">
+                    <div class="goal-header">
+                        <h3>Vacaciones</h3>
+                        <span class="goal-target">$5,000</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 65%"></div>
+                    </div>
+                    <div class="goal-details">
+                        <span>$3,250 de $5,000</span>
+                        <span>65% completado</span>
+                    </div>
+                    <p class="goal-timeline">Faltan 4 meses • $437/mes</p>
+                </div>
+                
+                <div class="goal-card">
+                    <div class="goal-header">
+                        <h3>Fondo de Emergencia</h3>
+                        <span class="goal-target">$10,000</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 30%"></div>
+                    </div>
+                    <div class="goal-details">
+                        <span>$3,000 de $10,000</span>
+                        <span>30% completado</span>
+                    </div>
+                    <p class="goal-timeline">Faltan 14 meses • $500/mes</p>
+                </div>
+                
+                <div class="goal-card">
+                    <div class="goal-header">
+                        <h3>Nuevo Auto</h3>
+                        <span class="goal-target">$25,000</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 12%"></div>
+                    </div>
+                    <div class="goal-details">
+                        <span>$3,000 de $25,000</span>
+                        <span>12% completado</span>
+                    </div>
+                    <p class="goal-timeline">Faltan 36 meses • $611/mes</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/Script.js"></script>
+</body>
+</html>
